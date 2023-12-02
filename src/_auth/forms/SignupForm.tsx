@@ -25,13 +25,13 @@ const SignupForm = () => {
   const {checkAuthUser,isLoading:isUserloding} = useUserContext();
   const navigate=useNavigate();
 
- const isloading =false;
+ 
    // 1. Define your form.
 
 
-  const {mutateAsync: CreateUserAccount ,isloading: iscreatingUser } =useCreateUserAccount();
+  const {mutateAsync: CreateUserAccount ,isPending: iscreatingUser } =useCreateUserAccount();
 
-  const {mutateAsync: SignInUserAcount ,isLoading: isSignIng } =useSignInAccount();
+  const {mutateAsync: SignInUserAcount ,isPending: isSignIng } =useSignInAccount();
 
    const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
