@@ -17,8 +17,6 @@ export  async function CreateUserAccount(user:INewUser)
             
         )
             
-       
-
         if(!newAccount) throw Error;
         const AvtarUrl = avatars.getInitials(user.name)
         
@@ -30,6 +28,7 @@ export  async function CreateUserAccount(user:INewUser)
             UserName:user.username,
             ImageUrl:AvtarUrl.toString(),
         })
+
         
         return newuser;
         
@@ -92,7 +91,8 @@ export async function getCurrentUser() {
                 [Query.equal('AccountId',CurrentAccount.$id)]
             )
             if(!currentUser) throw Error;
-
+            
+            
             return currentUser.documents[0];
     }
     catch(error)
@@ -100,4 +100,15 @@ export async function getCurrentUser() {
         console.log(error);
     }
     
+}
+
+export async function SignOutAccount(){
+    try{
+
+        const session = await account.deleteSession("current");
+
+        return session;
+    }catch(error){
+        console.log(error)
+    }
 }

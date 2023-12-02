@@ -3,12 +3,15 @@ import {
     useMutation,
     
  } from '@tanstack/react-query'
-import { CreateUserAccount, SignInAccount } from '../appwrite/api'
+import { CreateUserAccount, SignInAccount, SignOutAccount } from '../appwrite/api'
 import { INewUser } from '@/types'
 
 
 
  export const useCreateUserAccount =() =>{
+
+
+   
     return useMutation({
         mutationFn: ( user :INewUser) =>CreateUserAccount(user)
     })
@@ -23,3 +26,9 @@ import { INewUser } from '@/types'
             }) =>SignInAccount(user)
     })
  }
+
+ export const useSignOutAccount =() =>{
+   return useMutation({
+       mutationFn: SignOutAccount
+   })
+}

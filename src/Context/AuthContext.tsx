@@ -46,11 +46,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (currentAccount) {
         setUser({
           id: currentAccount.$id,
-          name: currentAccount.name,
-          username: currentAccount.username,
-          email: currentAccount.email,
-          imageUrl: currentAccount.imageUrl,
-          bio: currentAccount.bio,
+          name: currentAccount.Name,
+          username: currentAccount.UserName,
+          email: currentAccount.Email,
+          imageUrl: currentAccount.ImageUrl,
+          bio: currentAccount.Bio,
         });
         setIsAuthenticated(true);
 
@@ -70,9 +70,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const cookieFallback = localStorage.getItem("cookieFallback");
     if (
       cookieFallback === "[]"
-      //  ||
-      // cookieFallback === null ||
-      // cookieFallback === undefined
+       ||
+      cookieFallback === null ||
+      cookieFallback === undefined
     ) {
       navigate("/sign-in");
     }

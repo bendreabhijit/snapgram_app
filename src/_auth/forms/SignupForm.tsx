@@ -22,7 +22,7 @@ import { useUserContext } from "@/Context/AuthContext"
 
 const SignupForm = () => {
   const { toast } = useToast()
-  const {checkAuthUser,isLoading:isUserloding} = useUserContext();
+  const {checkAuthUser} = useUserContext();
   const navigate=useNavigate();
 
  
@@ -31,7 +31,7 @@ const SignupForm = () => {
 
   const {mutateAsync: CreateUserAccount ,isPending: iscreatingUser } =useCreateUserAccount();
 
-  const {mutateAsync: SignInUserAcount ,isPending: isSignIng } =useSignInAccount();
+  const {mutateAsync: SignInUserAcount  } =useSignInAccount();
 
    const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -156,7 +156,7 @@ const SignupForm = () => {
         </Button>
         <p className="text-small-regular text-light-2 text-center mt-2">
           Already have an Account ?
-         <Link to="/sign-up" className="text-primary-500 text-small-semibold ml-1">
+         <Link to="/sign-in" className="text-primary-500 text-small-semibold ml-1">
           Log in
          </Link>
         </p>
