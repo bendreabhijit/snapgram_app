@@ -1,9 +1,10 @@
 
 import { Link,  useNavigate } from 'react-router-dom'
-import { Button } from '../ui/button'
+
 import { useSignOutAccount } from '@/lib/react-query/queryandmutation'
 import {  useEffect } from 'react';
 import { useUserContext } from '@/Context/AuthContext';
+import { Button } from '../ui';
 
 const Topbar = () => {
 
@@ -37,7 +38,7 @@ const Topbar = () => {
         <Link to={`/Profile/${user.id}`} className='flex-center gap-3'>
 
               
-              <img src={imageurl|| 'assets/icons/profile-placeholder.png' } alt='Profile' className='h-8 w-8 rounded-full'></img>
+              <img src={imageurl|| 'assets/icons/profile-placeholder.svg' } alt='Profile' className='h-8 w-8 rounded-full'></img>
         </Link>
        </div>
 
