@@ -7,6 +7,7 @@ import SignupForm from './_auth/forms/SignupForm'
 import AuthLayout from './_auth/AuthLayout'
 import RootLayout from './_root/RootLayout'
 import { Toaster } from './components/ui/toaster'
+import CreatePost from './_root/pages/CreatePost'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
 
             <Route element={<RootLayout/>}>
                 <Route index element={<Home/>}/> 
+                <Route path="/createpost" element={<CreatePost />} />
             </Route>
             
         </Routes>

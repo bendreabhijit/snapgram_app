@@ -56,7 +56,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
         setIsAuthenticated(true);
 
-      console.log(currentAccount)
+      
 
         return true;
 

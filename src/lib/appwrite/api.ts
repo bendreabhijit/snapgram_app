@@ -5,6 +5,8 @@ import { INewPost, INewUser, IUpdatePost } from "@/types";
 import { account, appwriteconfig, avatars, databases, storage } from "./config";
 
 
+
+
 export  async function CreateUserAccount(user:INewUser) 
 {
     
@@ -88,7 +90,7 @@ export async function getCurrentUser() {
 
             if(!CurrentAccount) throw Error;
 
-            console.log(CurrentAccount)
+            
 
             const currentUser = await databases.listDocuments(
                 appwriteconfig.DatabasesId,
@@ -117,8 +119,6 @@ export async function SignOutAccount(){
         console.log(error)
     }
 }
-
-
 
 export async function createPost(post: INewPost) {
     try {
@@ -162,8 +162,6 @@ export async function createPost(post: INewPost) {
       console.log(error);
     }
   }
-
-
 
   // ============================== UPLOAD FILE
 export async function uploadFile(file: File) {

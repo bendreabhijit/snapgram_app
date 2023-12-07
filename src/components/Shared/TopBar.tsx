@@ -12,7 +12,7 @@ const Topbar = () => {
  
   const {user} =useUserContext();
   const imageurl =user.imageUrl 
-  console.log('url : '+imageurl)
+  
 
   const Navigate =useNavigate();
   useEffect(()=>{
