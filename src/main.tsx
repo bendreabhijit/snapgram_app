@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
    <QueryProvider>
    <AuthProvider>
       <App/>  
+      
       </AuthProvider>
    </QueryProvider>
    

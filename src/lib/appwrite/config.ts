@@ -11,10 +11,15 @@ export const appwriteconfig ={
     PostCollectionID : import.meta.env.VITE_APPWRITE_POSTS_COLLECTION_ID,
     SavesCollectionID : import.meta.env.VITE_APPWRITE_SAVES_COLLECTION_ID,
 
+
+    
 }
+console.log(appwriteconfig)
 
 export const client = new Client();
 
+
+console.log(client)
 client.setProject(appwriteconfig.ProjectId);
 client.setEndpoint(appwriteconfig.Url)
 export const account = new Account(client);
